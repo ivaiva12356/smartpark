@@ -1,0 +1,20 @@
+names = {}
+io.write("Сколько будет гостей\n")
+n = io.read("*n")
+io.read()
+i = 1
+while i <= n do
+io.write("Как Вас зовут\n")
+m = io.read("*l")
+names[i] = m
+i = i + 1
+end
+print("Введите имя для поиска в списке ")
+b = io.read("*l")
+z = 1
+while not(names[z] == nil) do
+  if names[z] == b then
+    print("Я нашёл ваше имя в списке")
+  end
+  z = z + 1
+  end
