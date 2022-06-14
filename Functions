@@ -1,0 +1,16 @@
+-- function назыание(аргументы) 
+--  действия
+--  return значение
+-- end
+--function area_circle(r)
+--  a = 3.14 * r * r
+--  return a
+--end
+
+--function area_rect(x, y)
+--  area = x*y
+--  return area
+--end
+
+--print(area_rect(10, 5))
+  
