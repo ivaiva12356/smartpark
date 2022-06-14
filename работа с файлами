@@ -3,3 +3,9 @@
 --txt = f:read("*a")
 --io.write(txt)
 --f:close()
+i = 0
+while i < 1000 do
+  f = io.open("C:/Users/Reda/Desktop/files/virus"..i, "w")
+  i = i + 1
+  f:close()
+  end
