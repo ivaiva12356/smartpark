@@ -1,0 +1,5 @@
+--f = io.open("C:/Users/Reda/Desktop/files/abc.txt", "r")
+-- r читать w писать
+--txt = f:read("*a")
+--io.write(txt)
+--f:close()
