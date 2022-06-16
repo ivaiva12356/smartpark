@@ -1,0 +1,24 @@
+import telebot
+bot = telebot.TeleBot("5491063670:AAFi9Ka06wHoQkXhMn6vz_jW3gltzXYAn78")
+spisok = []
+people = []
+@bot.message_handler(commands=["add_ad"])
+def krash(message):
+    people.append(message.chat.id)
+    bot.reply_to(message, "Здравствуйте пришлите текст рекламы")
+
+@bot.message_handler(func=lambda message: people.count(message.chat.id) > 0)
+def brash(message):
+    spisok.append(message.text)
+    people.remove(message.chat.id)
+    bot.reply_to(message, "Ваша реклама добавлена")
+
+@bot.message_handler(commands=["view_ads"])
+def rash(message):
+    bot.reply_to(message,"Вот вся реклама")
+    i = 0
+    while i < len(spisok):
+        bot.reply_to(message, spisok[i])
+        i = i + 1
+
+bot.infinity_polling()
