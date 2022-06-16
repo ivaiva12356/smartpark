@@ -1,0 +1,25 @@
+import telebot
+bot = telebot.TeleBot("5491063670:AAFi9Ka06wHoQkXhMn6vz_jW3gltzXYAn78")
+otzivi = []
+peoples = []
+
+@bot.message_handler(commands=["Add_a_review"])
+def honey(message):
+    peoples.append(message.chat.id)
+    bot.reply_to(message, "Пришлите ваш отзыв")
+
+@bot.message_handler(func=lambda message: peoples.count(message.chat.id) > 0)
+def dead(message):
+    otzivi.append(message.text)
+    peoples.remove(message.chat.id)
+    bot.reply_to(message, "Ваш отзыв добавлен")
+
+@bot.message_handler(commands=["Show_all_reviews"])
+def lesh(message):
+    bot.reply_to(message, "Вот все отзывы")
+    g = 0
+    while g < len(otzivi):
+        bot.reply_to(message, otzivi[g])
+        g = g + 1
+
+bot.infinity_polling()
