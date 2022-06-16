@@ -1,0 +1,19 @@
+import telebot
+
+bot = telebot.TeleBot("5491063670:AAFi9Ka06wHoQkXhMn5vz_jW3gltzXYAn78")
+
+
+@bot.message_handler(comands=["start"])
+def send_hello(message):
+    bot.reply_to(message, "Привет! Добро пожаловать в бот!")
+
+
+bot.infinity_polling()
+
+@bot.message_handler(comands=["quiz"])
+def send_quiz(message):
+    bot.reply_to(message, "Добро пожаловать в викторину!"
+                          "Я задам тебе 5 вопросов и ты будещь должен на них ответить, в конце я посчитаю баллы и оценю твои знания, готов?")
+
+
+bot.infinity_polling()
